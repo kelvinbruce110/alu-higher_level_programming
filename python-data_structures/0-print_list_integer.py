@@ -2,5 +2,5 @@
 def print_list_integer(my_list=[]):
     for number in my_list:
         print("{:d}".format(number))
-numbers = [98, 402, -3, 5]
-print_list_integer(numbers)
+my_list = [1, 2, 3, 4, 5]
+print_list_integer(my_list)
