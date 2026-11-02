@@ -1,10 +1,15 @@
 #!/usr/bin/node
-
-const args = process.argv.slice(2).map((arg) => parseInt(arg, 10));
-
-if (args.length <= 1) {
-  console.log(0);
+const { argv } = require('node:process');
+const numbers = [];
+argv.forEach((val, index) => {
+  if (Number.isNaN(Number(val))) {
+    numbers.push(0);
+  } else {
+    numbers.push(Number(val));
+  }
+});
+if (numbers.length > 2) {
+  console.log(numbers.sort((a, b) => b - a)[1]);
 } else {
-  const sorted = args.sort((a, b) => b - a);
-  console.log(sorted[1]);
+  console.log(0);
 }

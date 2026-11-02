@@ -1,15 +1,15 @@
 #!/usr/bin/node
-
-const size = parseInt(process.argv[2], 10);
-
-if (isNaN(size)) {
+const { argv } = require('node:process');
+if (Number.isNaN(Number(argv[2]))) {
   console.log('Missing size');
 } else {
-  for (let i = 0; i < size; i++) {
-    let row = '';
-    for (let j = 0; j < size; j++) {
-      row += 'X';
+  for (let i = 1; i <= Number(argv[2]); i++) {
+    let side = '';
+    let count = 1;
+    while (count <= Number(argv[2])) {
+      side += 'X';
+      count++;
     }
-    console.log(row);
+    console.log(side);
   }
 }
